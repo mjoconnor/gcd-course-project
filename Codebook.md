@@ -1,5 +1,4 @@
 #Getting and Cleaning Data - Codebook
-***
 
 ##Overview
 The data for this project was obtained from: 
@@ -7,33 +6,6 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 The link to download the data is:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-
-***
-
-##Process
-The `run_analysis.R` script preforms the following actions on the UCI HAR Dataset to produce 2 tidy datasets.
-
-1. Creates the **data** and **results** folders in the working directory, if they do not already exist.
-2. Downloads the dataset .zip file from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and unzips it in the **data** folder.
-3. Reads the following .txt files into their own data frame.
-    * `test.x` contains the test data from `X_test.txt`
-    * `test.y` contains the test activity ids from `y_test.txt`
-    * `test.sub` contains the test subject ids from `subject_test.txt`
-    * `train.x` contains the training data from `X_train.txt`
-    * `train.y` contains the training activity ids from `y_train.txt`
-    * `train.sub` contains the training subject ids from `subject_train.txt`
-    * `features` contains the variable names for the data in `test.x` & `train.x`
-    * `activities` contains the labels for the activity ids in `test.y` & `train.y`
-4. Converts the second column of the `features` data frame into the column names for the `test.x` & `train.x` data frames.
-5. Combines `test.sub`, `test.y` and `test.x` into a larger data frame named `test.data`.
-6. Combines `train.sub`, `train.y` and `train.x` into a larger data frame named `train.data`.
-7. Combines 'test.data' & 'train.data' into a single data frame names `data.all`.
-8. Extract the columns whose name contains `mean()` & `std()` for the tidy dataset.
-9. Converts the activity numeric ids to descriptive names.
-10. Cleans up the column names by removing the `()` and changing `-` to `.`
-11. Creates an initial tidy dataset file named `initial-results.txt` in the **results** folder.
-12. Finds the average for all variables grouped by the `activity` and `subject' columns.
-13. Creates a second tidy dataset file named 'mean-results.txt' in the **results** folder.
 
 ***
 
